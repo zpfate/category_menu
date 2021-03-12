@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'category_menu.dart';
 void main() => runApp(MyApp());
@@ -72,11 +73,15 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: CategoryMenu(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton: FloatingActionButton.extended(
+          icon: Icon(Icons.add),
+          onPressed: (){
+
+          }, label: Text('添加信息')
+      ),
+
+
+        // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

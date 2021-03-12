@@ -61,28 +61,28 @@ class _CategoryMenuState extends State<CategoryMenu> {
     return Expanded(
         child: NotificationListener<ScrollUpdateNotification>(onNotification:(notification){
 
-          List widgetIndexs = [];
-          _keys.forEach((index, key) {
-            var itemRect = getRectFromKey(index, key);
-
-            if (itemRect != null && itemRect['offsetY'] > itemRect['height']) {
-              widgetIndexs.add(itemRect);
-            }
-          });
-
-          if (widgetIndexs.length > 0) {
-            int widgetIndex = widgetIndexs[0]['index'];
-            if ((widgetIndexs[0]['offsetY'] - widgetIndexs[0]['height']) >
-                300 / 2.2) {
-              widgetIndex -= 1;
-            }
-            if (widgetIndex ~/10 != _selectedIndex) {
-              setState(() {
-                _selectedIndex = widgetIndex;
-              });
-//              _scrollController.position.moveTo(widgetIndex ~/ 10 * 64.0 - 64.0);
-            }
-          }
+//          List widgetIndexs = [];
+//          _keys.forEach((index, key) {
+//            var itemRect = getRectFromKey(index, key);
+//
+//            if (itemRect != null && itemRect['offsetY'] > itemRect['height']) {
+//              widgetIndexs.add(itemRect);
+//            }
+//          });
+//
+//          if (widgetIndexs.length > 0) {
+//            int widgetIndex = widgetIndexs[0]['index'];
+//            if ((widgetIndexs[0]['offsetY'] - widgetIndexs[0]['height']) >
+//                300 / 2.2) {
+//              widgetIndex -= 1;
+//            }
+//            if (widgetIndex ~/10 != _selectedIndex) {
+//              setState(() {
+//                _selectedIndex = widgetIndex;
+//              });
+////              _scrollController.position.moveTo(widgetIndex ~/ 10 * 64.0 - 64.0);
+//            }
+//          }
           return true;
         },
           child: ListView.builder(
